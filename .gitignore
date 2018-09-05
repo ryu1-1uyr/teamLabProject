@@ -20,5 +20,5 @@ doc/
 .DS_Store
 .idea
 .secret
-
+.idea
 /locales/database.yml
