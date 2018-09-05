@@ -24,3 +24,4 @@ testApp-api/.idea
 .DS_Store
 testApp-api/locales/database.yml
 testApp-api/config/locales/database.yml
+testApp-api/config/database.yml
