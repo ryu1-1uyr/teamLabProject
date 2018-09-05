@@ -1,25 +1,26 @@
 # Ignore bundler config.
-/.bundle
+testApp-api/.bundle
 
 # Ignore bundler gems.
-vendor/bundle
+testApp-api/vendor/bundle
 
 # Ignore the default SQLite database.
-/db/*.sqlite3
-/db/*.sqlite3-journal
+testApp-api/db/*.sqlite3
+testApp-api/db/*.sqlite3-journal
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+testApp-api/log/*.log
+testApp-api/tmp
 
 # Ignore other unneeded files.
-doc/
-*.swp
-*~
-.project
-.DS_Store
-.idea
+testApp-api/doc/
+testApp-api/*.swp
+testApp-api/*~
+testApp-api/.project
+testApp-api/.DS_Store
+testApp-api/.idea
 .secret
 .idea
 
-/locales/database.yml
+testApp-api/locales/database.yml
+testApp-api/config/locales/database.yml
