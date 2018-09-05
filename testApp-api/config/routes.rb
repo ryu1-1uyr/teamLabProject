@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  get '/tester' => "tester#order"
 
+  get '/tester' => "tester#order"
+  resources :orders
   resources :recommended_items
   resources :categories
   resources :products

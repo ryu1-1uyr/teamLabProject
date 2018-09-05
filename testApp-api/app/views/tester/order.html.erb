@@ -1,6 +1,11 @@
 <h1>tester</h1>
 <br>
-<% form_tag() do %>
-<div>商品id <input type="number"> , いく使うか <input type="number"> , 名前 <input type="text"> , メアド <input type="email"></div>
 
+<%= form_tag("/orders") do %>
+<div>
+  商品id <input name="product_id" type="number"> ,
+  いく使うか <input name="how_many_buy" type="number"> ,
+  名前 <input name="user_name" type="text"> ,
+  メアド <input name="address" type="email">
+  <input type="submit" value="submit"></div>
 <% end %>
