@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  
+  get '/search' => "search#product"
 
 
   get '/tester' => "tester#order"
