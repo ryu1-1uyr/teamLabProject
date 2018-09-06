@@ -1,0 +1,2 @@
+class SettlementTable < ApplicationRecord
+end

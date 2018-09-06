@@ -13,12 +13,20 @@ class OrdersController < ApplicationController
     render json: @order
   end
 
+  def create_settlement
+    # @settlement =
+  end
+
   # POST /orders
   def create
     @order = Order.new(order_params)
 
     if @order.save
       render json: @order, status: :created, location: @order
+      #settlement_table作成の処理
+
+      create_settlement
+
     else
       render json: @order.errors, status: :unprocessable_entity
     end
