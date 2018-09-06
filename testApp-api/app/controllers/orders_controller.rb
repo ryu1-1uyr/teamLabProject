@@ -45,7 +45,7 @@ class OrdersController < ApplicationController
     end
 
     # Only allow a trusted parameter "white list" through.
-  # require(:order)消したら動く
+    # require(:order)消したら動く{oeder:{product_id:1}}みたいなjsonでおくればいい
     def order_params
       params.require(:order).permit(:product_id, :how_many_buy, :address, :user_name)
     end
