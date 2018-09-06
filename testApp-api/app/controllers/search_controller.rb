@@ -31,6 +31,9 @@ class SearchController < ApplicationController
 
     if !query.empty?
       @searched_puroducts =Product.where(query.join(" and "),hash)
+      render json:@searched_puroducts
+    else
+      render json: {'name':'kkzrxck'}
     end
 
 
@@ -62,7 +65,43 @@ class SearchController < ApplicationController
     #       "%#{params[:name]}%"
     #   )
 
+  end
 
-    render json: {'name':'kkzrxck'}
+  def test
+
+    hash = {}
+    query = []
+
+    if params[:name]
+      name_query = "name LIKE :name"
+      query.push(name_query)
+      hash[:name] = "%"+params[:name]+"%"
+    end
+
+    if params[:category]
+      category_query = "category_id = :category"
+      query.push(category_query)
+      hash[:category] = params[:category_id]
+    end
+
+    if params[:max]
+      max_query = "price < :max"
+      query.push(max_query)
+      hash[:max] = params[:max]
+    end
+
+    if params[:min]
+      min_query = "price >= :min"
+      query.push(min_query)
+      hash[:min] = params[:min]
+    end
+
+
+    if !query.empty?
+      @searched_puroducts =Product.where(query.join(" and "),hash)
+      render json:@searched_puroducts
+
+    end
+
   end
 end
