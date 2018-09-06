@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :administrators
   get '/search' => "search#product"
   post '/search' => "search#test"
 
