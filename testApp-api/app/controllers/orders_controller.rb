@@ -14,7 +14,8 @@ class OrdersController < ApplicationController
   end
 
   def create_settlement
-    @settlement = SettlementTable.new(order_id: @order["id"])#settlement_stateがnullになってるけど、payjpと連携した後に、トークン渡して入金確認したらstate書き換える感じにしたい
+    @settlement = SettlementTable.new(order_id: @order["id"])
+    #settlement_stateがnullになってるけど、payjpと連携した後に、トークン渡して入金確認したらstate書き換える感じにしたい
     @settlement.save
 
   end
