@@ -9,7 +9,7 @@ class PayController <  ActionController::Base
   #post /products/pay
   def pay
 
-    Payjp.api_key = 'sk_test_634284733603e1bf29ea3432'
+    Payjp.api_key = ''
     charge = Payjp::Charge.create(
         :amount => 3500,
         :card => params['payjp-token'],
