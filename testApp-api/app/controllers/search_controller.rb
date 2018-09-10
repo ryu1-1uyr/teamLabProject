@@ -28,6 +28,12 @@ class SearchController < ApplicationController
       hash[:min] = params[:min]
     end
 
+    if params[:gender]
+      gender_query = "gender = :gender"
+      query.push(gender_query)
+      hash[:gender] = params[:gender]
+    end
+
 
     if !query.empty?
       @searched_puroducts =Product.where(query.join(" and "),hash)
