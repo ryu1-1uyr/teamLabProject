@@ -25,3 +25,4 @@ testApp-api/.idea
 testApp-api/locales/database.yml
 testApp-api/config/locales/database.yml
 testApp-api/config/database.yml
+testApp-api/app/controllers/pay_controller.rb
