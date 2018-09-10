@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_10_103845) do
+ActiveRecord::Schema.define(version: 2018_09_10_111023) do
 
   create_table "administrators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2018_09_10_103845) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "gender"
+    t.string "html_url"
   end
 
   create_table "recommended_items", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
