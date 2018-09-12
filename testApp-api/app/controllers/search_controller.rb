@@ -44,34 +44,6 @@ class SearchController < ApplicationController
     end
 
 
-    # if params[:name] && params[:category] && params[:max] && params[:min]
-    #
-    #   @searched_products =  Product.where(
-    #       "name LIKE ? and price >= ? and price < ? and category_id = ?",
-    #       "%#{params[:name]}%",params[:min],params[:max],params[:category]
-    #   )
-    #
-    # elsif params[:name] && params[:category] && params[:max]
-    #
-    #   @searched_products =  Product.where(
-    #       "name LIKE ? and price < ? and category_id = ?",
-    #       "%#{params[:name]}%",params[:max],params[:category]
-    #   )
-    #
-    # elsif params[:name] && params[:category]
-    #
-    #   @searched_products =  Product.where(
-    #       "name LIKE ? and category_id = ?",
-    #       "%#{params[:name]}%",params[:category]
-    #   )
-    #
-    # elsif params[:name]
-    #
-    #   @searched_products =  Product.where(
-    #       "name LIKE ?",
-    #       "%#{params[:name]}%"
-    #   )
-
   end
 
   def test
@@ -110,11 +82,19 @@ class SearchController < ApplicationController
     end
 
 
+
     if !query.empty?
       @searched_puroducts =Product.where(query.join(" and "),hash)
-      render json:@searched_puroducts
 
-    else
+      if @searched_puroducts.empty?
+        @searched_puroducts = Product.all
+        render json: @searched_puroducts
+      else
+        render json:@searched_puroducts
+      end
+
+      else
+
       @searched_puroducts = Product.all
       render json: @searched_puroducts
     end
