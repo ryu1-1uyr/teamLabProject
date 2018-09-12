@@ -1,9 +1,10 @@
-class CreateSettlement_tables < ActiveRecord::Migration[5.2]
+class CreateOrders < ActiveRecord::Migration[5.2]
   def change
-    create_table :settlement_tables do |t|
-      t.integer :order_id
-      t.string :settlement_state
-      t.string :payment_method
+    create_table :orders do |t|
+      t.integer :product_id
+      t.integer :how_many_buy
+      t.string :address
+      t.string :user_name
 
       t.timestamps
     end

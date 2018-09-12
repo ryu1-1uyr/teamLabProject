@@ -39,7 +39,8 @@ class SearchController < ApplicationController
       @searched_puroducts =Product.where(query.join(" and "),hash)
       render json:@searched_puroducts
     else
-      render json: {'name':'kkzrxck'}
+      @searched_puroducts = Product.all
+      render json: @searched_puroducts
     end
 
 
