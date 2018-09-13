@@ -10,10 +10,10 @@ class SearchController < ApplicationController
       hash[:name] = params[:name]
     end
 
-    if params[:category]
-      category_query = "category_id = :category"
+    if params[:category_id]
+      category_query = "category_id = :category_id"
       query.push(category_query)
-      hash[:category] = params[:category_id]
+      hash[:category_id] = params[:category_id]
     end
 
     if params[:max]
@@ -57,10 +57,10 @@ class SearchController < ApplicationController
       hash[:name] = "%"+params[:name]+"%"
     end
 
-    if params[:category]
-      category_query = "category_id = :category"
+    if params[:category_id]
+      category_query = "category_id = :category_id"
       query.push(category_query)
-      hash[:category] = params[:category_id]
+      hash[:category_id] = params[:category_id]
     end
 
     if params[:max]
